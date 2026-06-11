@@ -1,13 +1,15 @@
 ---
 name: final-exam-review
-description: Create high-yield final exam review packs from course materials, lecture slides, PDFs, Word documents, assignments, past exams, and practice questions. Use when a student wants Codex or another agent to convert study materials into a detailed exam-focused outline, chapter practice bank, and mock exams, with MarkItDown preferred but optional for source conversion.
+description: Create high-yield final exam review packs from course materials, lecture slides, PDFs, Word documents, assignments, past exams, and practice questions. Use when a student wants Codex or another agent to convert study materials into a detailed study-ready outline with summarized content, formulas, methods, chapter practice, and mock exams, with MarkItDown preferred but optional for source conversion.
 ---
 
 # Final Exam Review
 
 ## Overview
 
-Use this skill to turn messy course materials into an exam-focused review package that a student can study from directly. Optimize for final-exam preparation: high-frequency concepts, problem patterns, mistakes to avoid, and enough practice to self-test.
+Use this skill to turn messy course materials into an exam-focused review package that a student can study from directly. Optimize for final-exam preparation: high-frequency concepts, study-ready explanations, formulas, methods, problem patterns, mistakes to avoid, and enough practice to self-test.
+
+The review outline is the core deliverable. It must not merely point out what to review; it must include the actual summarized content the student should learn, memorize, apply, and practice.
 
 Default to Chinese output unless the user asks otherwise. Preserve important English technical terms beside Chinese explanations when the source materials use them.
 
@@ -71,17 +73,25 @@ Then synthesize the material in this order:
    - emphasized in titles, summaries, bold text, learning objectives, or teacher notes;
    - required for multi-step problems;
    - frequently tested in past papers or assignments.
-3. Write concise but complete explanations. Prefer study-ready phrasing over broad textbook prose.
-4. Highlight key knowledge points using this exact pattern: `**<mark>重点内容</mark>**`.
-5. After each knowledge module, add practice:
+3. Write the review outline as the main study material, not as a checklist. For every knowledge module, include the actual content summary:
+   - definitions, principles, mechanisms, theorems, laws, frameworks, or arguments;
+   - formulas, symbols, variable meanings, units, assumptions, and conditions of use;
+   - derivation logic or method steps when the course expects calculation, proof, programming, analysis, or application;
+   - comparisons between similar concepts and the exact distinction that matters in exams;
+   - common traps and how to avoid them.
+4. Prefer concise but complete explanations. The student should be able to learn from the outline without reopening the original PPT, Word, or PDF unless source quality is poor.
+5. Highlight key knowledge points using this exact pattern: `**<mark>重点内容</mark>**`.
+6. After each knowledge module, add practice:
    - 2-4 true/false questions;
    - 1-2 classic examples, short-answer prompts, proof prompts, calculation problems, or application questions depending on the subject;
    - answers and explanations inside `<details>` blocks.
-6. Mark uncertain inferred content as "推测考点" and explain why it is inferred.
+7. Mark uncertain inferred content as "推测考点" and explain why it is inferred.
 
-For math, engineering, programming, statistics, physics, economics, accounting, or other calculation-heavy courses, include formulas, conditions of use, solved examples, common traps, and unit or notation checks.
+For math, engineering, programming, statistics, physics, economics, accounting, or other calculation-heavy courses, formulas and methods are mandatory core content. Include the formula itself, what each symbol means, when it applies, when it does not apply, the standard solving procedure, a worked example pattern, common traps, and unit or notation checks.
 
-For humanities, law, management, literature, language, politics, history, or theory-heavy courses, include definitions, comparison tables, argument structures, canonical examples, possible essay prompts, and answer frameworks.
+For humanities, law, management, literature, language, politics, history, or theory-heavy courses, include the actual theory summaries, definitions, comparison tables, argument structures, canonical examples, possible essay prompts, and answer frameworks.
+
+Do not deliver a review outline that only says "review X", "understand Y", or "memorize Z". Replace those placeholders with the actual X/Y/Z content from the sources.
 
 ## Mock Exams
 
@@ -100,7 +110,7 @@ If the user requests web support or current/open resources may improve the paper
 Before delivering, verify that:
 
 - Every important chapter in scope appears in the outline or is explicitly marked as missing from the source set.
-- Every knowledge module has highlighted key points and practice questions.
+- Every knowledge module has highlighted key points, actual summarized study content, formulas or methods when relevant, and practice questions.
 - Answers and explanations are present for practice questions and mock exams.
 - The processing log explains any conversion failures, garbled Markdown, unreadable files, or fallback reads.
 - The final package is usable without rereading the original PPT, Word, or PDF files, except where missing source quality prevents that.
