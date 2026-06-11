@@ -1,0 +1,7 @@
+interface:
+  display_name: "Final Exam Review"
+  short_description: "从PPT/PDF/Word等课程资料生成期末冲刺复习包"
+  default_prompt: "Use $final-exam-review to turn my course materials into a high-yield final exam review package."
+
+policy:
+  allow_implicit_invocation: true
