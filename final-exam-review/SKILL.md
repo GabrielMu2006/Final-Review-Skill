@@ -1,6 +1,6 @@
 ---
 name: final-exam-review
-description: Create high-yield final exam review packs from course materials, lecture slides, PDFs, Word documents, assignments, past exams, and practice questions. Use when a student wants Codex or another agent to convert study materials into a detailed study-ready outline with summarized content, formulas, methods, chapter practice, and mock exams, with MarkItDown preferred but optional for source conversion.
+description: Create high-yield final exam review packs from course materials, lecture slides, PDFs, Word documents, assignments, past exams, and practice questions. Use when a student wants Codex or another agent to convert study materials into a detailed study-ready outline with summarized content, well-rendered formulas, methods, chapter practice, and mock exams, with MarkItDown preferred but optional for source conversion.
 ---
 
 # Final Exam Review
@@ -61,6 +61,29 @@ markitdown INPUT > OUTPUT.md
 
 Always create a processing log that records each source file, conversion status, fallback method, and any content that may be missing or unreliable.
 
+## Formula Formatting
+
+Make formulas readable and renderable in Markdown. Do not leave formulas as rough OCR text or plain ASCII when they can be reconstructed.
+
+- Use inline math for short symbols and expressions: `\(x_i\)`, `\(E = mc^2\)`, `\(a_{n+1}\)`.
+- Use display math for important formulas:
+
+```markdown
+$$
+S_n = \sum_{i=1}^{n} a_i
+$$
+```
+
+- Use LaTeX notation for subscripts, superscripts, fractions, roots, vectors, matrices, limits, integrals, cases, and aligned derivations:
+  - `x_i`, `x^2`, `a_{n+1}`, `\frac{a}{b}`, `\sqrt{x}`, `\vec{v}`, `\sum_{i=1}^{n}`, `\int_a^b f(x)\,dx`;
+  - `\begin{aligned} ... \end{aligned}` for multi-step derivations;
+  - `\begin{cases} ... \end{cases}` for piecewise definitions;
+  - `\begin{bmatrix} ... \end{bmatrix}` for matrices.
+- Explain every important symbol after the formula, especially variables, parameters, units, constraints, and assumptions.
+- If the source formula is broken by conversion, infer the likely formula from surrounding context only when confidence is high. Otherwise mark it as "公式待核对" and cite the source location.
+- Do not put renderable formulas inside code fences or backticks unless showing literal syntax. Math should appear as inline or display math.
+- If the user's target renderer may not support math, add a short plain-language explanation immediately after the formula.
+
 ## Build The Review Package
 
 Create a source index first. Track each file name, chapter, section, page, slide number, question number, or worksheet label whenever available.
@@ -87,7 +110,7 @@ Then synthesize the material in this order:
    - answers and explanations inside `<details>` blocks.
 7. Mark uncertain inferred content as "推测考点" and explain why it is inferred.
 
-For math, engineering, programming, statistics, physics, economics, accounting, or other calculation-heavy courses, formulas and methods are mandatory core content. Include the formula itself, what each symbol means, when it applies, when it does not apply, the standard solving procedure, a worked example pattern, common traps, and unit or notation checks.
+For math, engineering, programming, statistics, physics, economics, accounting, or other calculation-heavy courses, formulas and methods are mandatory core content. Include the formula itself in renderable LaTeX-style math, what each symbol means, when it applies, when it does not apply, the standard solving procedure, a worked example pattern, common traps, and unit or notation checks.
 
 For humanities, law, management, literature, language, politics, history, or theory-heavy courses, include the actual theory summaries, definitions, comparison tables, argument structures, canonical examples, possible essay prompts, and answer frameworks.
 
@@ -110,7 +133,7 @@ If the user requests web support or current/open resources may improve the paper
 Before delivering, verify that:
 
 - Every important chapter in scope appears in the outline or is explicitly marked as missing from the source set.
-- Every knowledge module has highlighted key points, actual summarized study content, formulas or methods when relevant, and practice questions.
+- Every knowledge module has highlighted key points, actual summarized study content, renderable formulas or methods when relevant, and practice questions.
 - Answers and explanations are present for practice questions and mock exams.
 - The processing log explains any conversion failures, garbled Markdown, unreadable files, or fallback reads.
 - The final package is usable without rereading the original PPT, Word, or PDF files, except where missing source quality prevents that.

@@ -31,7 +31,24 @@ Use this template for the final deliverables. Create separate Markdown files whe
 
 #### 公式、方法或论证框架
 
-- 公式/方法：写出完整公式、步骤、定理、模型或分析框架。
+- 公式/方法：写出完整公式、步骤、定理、模型或分析框架。重要公式使用可渲染的 Markdown 数学格式。
+
+$$
+\text{示例：}\quad S_n = \sum_{i=1}^{n} a_i,\qquad
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+$$
+
+- 上下标/分式/根号/求和/积分：使用 `x_i`、`x^2`、`a_{n+1}`、`\frac{a}{b}`、`\sqrt{x}`、`\sum_{i=1}^{n}`、`\int_a^b f(x)\,dx` 等 LaTeX 写法。
+- 多步推导：使用 `aligned` 环境。
+
+$$
+\begin{aligned}
+f'(x)
+&= \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} \\
+&= 2x
+\end{aligned}
+$$
+
 - 符号含义：解释每个变量、单位、输入输出或适用对象。
 - 适用条件：说明什么时候可以用，什么时候不能用。
 - 推导/逻辑：整理关键推导思路、证明路线、计算步骤或答题结构。
