@@ -1,0 +1,17 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+__pycache__/
+*.py[cod]
+
+.venv/
+venv/
+.env
+
+outputs/
+review-outputs/
+converted/
+converted-md/
+tmp/
+*.log

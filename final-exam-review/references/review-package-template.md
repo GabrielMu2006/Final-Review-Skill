@@ -2,9 +2,10 @@
 
 Use this template for the final deliverables. Create separate Markdown files when the task is large; otherwise use these sections in one Markdown file.
 
+Final deliverables must be normal Markdown, not wrapped in outer code fences. This lets math blocks, tables, and `<details>` answer sections render correctly.
+
 ## 复习提纲.md
 
-```markdown
 # 课程名 期末复习提纲
 
 ## 资料覆盖情况
@@ -75,11 +76,9 @@ $$
 3. 解题思路、关键步骤、最终答案、评分点。
 
 </details>
-```
 
 ## 章节题库.md
 
-```markdown
 # 章节题库
 
 ## 第 N 章：章节标题
@@ -100,11 +99,9 @@ $$
 - 逐题给出答案、理由、易错提醒和对应复习提纲位置。
 
 </details>
-```
 
 ## 模拟题.md
 
-```markdown
 # 期末模拟题
 
 ## 模拟题一：基础巩固卷
@@ -130,11 +127,9 @@ $$
 ## 模拟题二：高频考点卷
 
 ## 模拟题三：综合冲刺卷
-```
 
 ## 资料处理日志.md
 
-```markdown
 # 资料处理日志
 
 ## 输入资料
@@ -150,4 +145,3 @@ $$
 ## 未覆盖或不可靠内容
 
 - 文件名/章节：说明缺失、乱码、扫描件不可读、公式缺失、表格丢失或其他风险。
-```

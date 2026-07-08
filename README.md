@@ -30,12 +30,14 @@ final-exam-review/
 
 ## 安装
 
-将 `final-exam-review` 文件夹复制到 Codex skills 目录：
+将 `final-exam-review` 文件夹同步到 Codex skills 目录。这个命令既适合首次安装，也适合覆盖更新旧版本：
 
 ```bash
-mkdir -p ~/.codex/skills
-cp -R final-exam-review ~/.codex/skills/
+mkdir -p ~/.codex/skills/final-exam-review
+rsync -a --delete final-exam-review/ ~/.codex/skills/final-exam-review/
 ```
+
+安装或更新后，重启 Codex 以加载最新 skill。
 
 也可以直接在支持 skills 的环境中引用本仓库里的 `final-exam-review/SKILL.md`。
 
@@ -83,3 +85,7 @@ MarkItDown 是推荐路径，但不是硬依赖：
 - 课程资料很多，但缺少统一提纲。
 - 想把 PPT、PDF、作业题和往年题合并成一份可直接背诵和刷题的资料。
 - 希望 agent 在总结知识点后自动补充判断题、例题和模拟题。
+
+## License
+
+MIT
